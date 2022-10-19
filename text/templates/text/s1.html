@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タッチナンバー ナンバータッチ</title>
+    <link rel="stylesheet" href="{% static 's1.css' %}">
+
+</head>
+<body>
+    <h1>測定開始を押すとゲームがスタートする</h1>
+    <h1>{ゲーム説明}</h1>
+        <h1>1~20の数字を順にクリックしてみよう。できるだけ速くクリックすればタイムが短くなるぞ。最速タイムを目指そう</h1>
+    <div class="container">
+        <div class="numbers">
+            <div class="number"></div>
+            <div class="number"></div>
+        </div>
+        <div class="numbers">
+            <div class="number"></div>
+            <div class="number"></div>
+        </div>
+        <div class="numbers">
+            <div class="number"></div>
+            <div class="number"></div>
+        </div>
+        <div class="numbers">
+            <div class="number"></div>
+            <div class="number"></div>
+        </div>
+        <div class="numbers">
+            <div class="number"></div>
+            <div class="number"></div>
+        </div>
+
+        <div class="display">
+            <div id="time">000.000</div>
+            <div class="startBtn">測定開始</div>
+            <div id="endBtn">終了</div>
+        </div>
+
+        <div class="numbers">
+            <div class="number"></div>
+            <div class="number"></div>
+        </div>
+        <div class="numbers">
+            <div class="number"></div>
+            <div class="number"></div>
+        </div>
+        <div class="numbers">
+            <div class="number"></div>
+            <div class="number"></div>
+        </div>
+        <div class="numbers">
+            <div class="number"></div>
+            <div class="number"></div>
+        </div>
+        <div class="numbers">
+            <div class="number"></div>
+            <div class="number"></div>
+        </div>
+
+    </div>
+    <script src="{% static 's1.js' %}"></script>
+
+<a href="{% url 'text:ret' %}">トップに戻る</a>
+</body>
+</html>

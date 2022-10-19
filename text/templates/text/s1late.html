@@ -1,0 +1,46 @@
+<h1>タッチしてみよう</h1>
+
+<canvas id="canvas" width="500" height="3500"></canvas>
+
+<script>
+  window.onload = () => {
+    // キャンパスの要素を取得
+    const canvas = document.getElementById('canvas');
+    // 2次元の描画を行うメソッド
+    const ctx = canvas.getContext('2d');
+    // 座標とcanvasサイズを入れる用の変数
+    let x = 0;
+    let y = 0;
+    let w = canvas.width;
+    let h = canvas.height;
+    // 背景塗る
+    ctx.fillStyle = '#ccc';
+    // fillRect(x座標, y座標, 幅, 高さ)
+    ctx.fillRect(0, 0, w, h);
+
+    // es6以前の書き方：function onClick (e) {…}
+    let onClick = (e) => {
+      let rect = e.target.getBoundingClientRect();
+      // e.clientX(Y)がwindow左上からのクリックされた座標
+      // rect.left(top)がwindow左上からのcanvasの座標
+      x = e.clientX - rect.left;
+      y = e.clientY - rect.top;
+      draw();
+    }
+
+    // es6以前の書き方：function draw() {…}
+    const draw = () => {
+      // canvasで背景色つけてるとclearRectで初期化すると真っ白になっちゃうのでfillRectで初期化(塗りつぶし)
+      ctx.fillStyle = '#ccc';
+      ctx.fillRect(0, 0, w, h);
+      // 背景色が真っ白ならclearRectでもいいと思う
+      // ctx.clearRect(0, 0, w, h);
+
+      // クリックされた位置に描画処理
+      ctx.fillStyle = '#000';
+      // fillRect(x座標, y座標, 幅, 高さ)
+      ctx.fillRect(x, y, 10, 10);
+    }
+    canvas.addEventListener('click', onClick, false);
+  };
+</script>

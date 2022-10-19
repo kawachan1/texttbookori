@@ -1,0 +1,67 @@
+{% load static %}
+<head>
+
+  <script type="text/javascript">
+function kotae1()
+{
+if(f.q1.value == "サザエさん") {f.q1.value="○";
+
+changeImage();
+}
+else{
+f.q1.value="×";
+changeImage2();}
+
+}
+
+function kotae2()
+{
+if(f2.q2.value == "ピカチュウ") {
+  f2.q2.value="○";
+changeImage3();
+}
+else{
+f2.q2.value="×";
+changeImage4();}
+
+}
+function changeImage() {
+      let img = document.getElementById("image_place");
+      img.src = '{% static "maru.jpeg" %}';
+    }
+function changeImage2() {
+      let img = document.getElementById("image_place");
+      img.src = '{% static "batu.jpg" %}';
+    }
+function changeImage3() {
+      let img = document.getElementById("image_place2");
+      img.src = '{% static "maru.jpeg" %}';
+    }
+function changeImage4() {
+      let img = document.getElementById("image_place2");
+      img.src = '{% static "batu.jpg" %}';
+    }
+
+</script>
+
+</head>
+
+<h1>拡大して何のキャラか当ててみよう</h1>
+
+<img src="{% static 'sazae.jpg' %}"  alt="サンプル" width="30" height="100">
+<br>
+<img id="image_place" src={% static 'hatena.jpg' %} alt="サンプル" width="300" height="200">
+  <form name="f">
+    <input name="q1">
+    <input type="button"value="答え合わせ" onclick="kotae1()" >
+    </form>
+<hr>
+<h1>縮小して何のキャラか当ててみよう</h1>
+<img src="{% static 'pikachu.jpg' %}"  alt="サンプル" width="2000" height="2000">
+<br>
+<img id="image_place2" src={% static 'hatena.jpg' %} alt="サンプル" width="300" height="200">
+  <form name="f2">
+    <input name="q2">
+    <input type="button"value="答え合わせ" onclick="kotae2()" >
+    </form>
+<a href="{% url 'text:ret' %}">トップに戻る</a>
