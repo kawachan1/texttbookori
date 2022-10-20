@@ -1,0 +1,43 @@
+
+
+<head>
+  {% load static %}
+  <script type="text/javascript">
+function kotae1()
+{
+if(f.q1.value == "縮小") {f.q1.value="○";
+
+changeImage();
+}
+else{
+f.q1.value="×";
+changeImage2();}
+
+}
+
+
+function changeImage() {
+      let img = document.getElementById("image_place");
+      img.src = '{% static "maru.jpeg" %}';
+    }
+    function changeImage2() {
+      let img = document.getElementById("image_place");
+      img.src = '{% static "batu.jpg" %}';
+    }
+
+</script>
+
+</head>
+
+<body>
+
+
+  <h1>基本用語についてあててみよう</h1>
+  <img id="image_place" src={% static 'hatena.jpg' %} alt="サンプル" width="300" height="200">
+  <form name="f">
+    <p>画面を小さく縮めること
+      <hr><input name="q1"></p>
+    <input type="button"value="答え合わせ" onclick="kotae1()" >
+    </form>
+
+</body>

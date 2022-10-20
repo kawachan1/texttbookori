@@ -1,0 +1,61 @@
+{% load static %}
+<head>
+  <script type="text/javascript">
+    let once = false;
+	window.addEventListener('scroll', function () {
+
+		// ターゲットの画面トップからの距離
+		taeget_position = document.querySelector('#target').getBoundingClientRect().top;
+
+		// 画面トップからの距離から画面の高さより小さければ実行する
+			if (taeget_position <= window.innerHeight && once !== true) {
+				once = true;
+				alert(`よくできました`);
+			}
+	});
+  function kotae1()
+{
+if(f.q1.value == "寿限無") {f.q1.value="○";
+
+changeImage();
+}
+else{
+f.q1.value="×";
+changeImage2();}
+
+}
+
+
+function changeImage() {
+      let img = document.getElementById("image_place");
+      img.src = '{% static "maru.jpeg" %}';
+    }
+    function changeImage2() {
+      let img = document.getElementById("image_place");
+      img.src = '{% static "batu.jpg" %}';
+    }
+
+  </script>
+  <style type="text/css">
+  p {
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+}
+
+</style>
+</head>
+<h1>
+    これは何の文章かな？スクロールしてみよう
+  </h1>
+<p>寿限無(じゅげむ)　寿限無(じゅげむ)　五劫(ごこう)のすりきれ　海砂利(かいじゃり)水魚(すいぎょ)の水行末(すいぎょうまつ) 雲来末(うんらいまつ) 風来末(ふうらいまつ)　食(く)う寝(ね)るところに　住(す)むところ　やぶらこうじの　ぶらこうじ　パイポ　パイポ　パイポの　シューリンガン　シューリンガンの　グーリンダイ　グーリンダイの　ポンポコピーのポンポコナの　長久命(ちょうきゅうめい)の長助(ちょうすけ)
+    </p>
+
+
+<div class="block" id="target"><h1>何の文章でしょうか？</h1></div>
+<img id="image_place" src={% static 'hatena.jpg' %} alt="サンプル" width="300" height="200">
+  <form name="f">
+    <input name="q1">
+    <input type="button"value="答え合わせ" onclick="kotae1()" >
+    </form>
+<a href="{% url 'text:ret' %}">トップに戻る</a>

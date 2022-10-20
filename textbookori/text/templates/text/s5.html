@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>アプリのインストール</title>
+
+</head>
+
+<body>
+    <h1>アプリをインストールしてみましょう</h1>
+    <p>①スマホ内のPlayストアのマーク⇩をタップ
+    <br>
+    <img  src="{% static 'hand.png' %}" alt = "hand" width="100" style="transform: rotate(45deg) ;">
+    <img src="{% static 'Playstore.png' %}" alt = "playstore_logo" width="220" height="240">
+
+    </p>
+    <p>②虫眼鏡をタップして、アプリを検索</p>
+    <div style="position:relative; top: 5px; left: 100px;">
+    <img src="{% static 'Playstore_serch.png' %}" alt = "Playstore_serch" width="240px">
+        <div style="position:absolute; top:-40px; left:-90px; transform:rotate(45deg);">
+            <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
+        </div>
+    </div>
+
+    <br>
+    <p>③インストールをタップ</p>
+    <div style="position:relative; top: 5px; left: 100px;">
+        <img src="{% static 'Playstore_result.png' %}" alt = "Playstore_serch" width="240px">
+            <div style="position:absolute; top:0px; left:50px; transform:rotate(45deg);">
+                <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
+            </div>
+        </div>
+
+    <p>インストール完了！</p>
+    <a href="{% url 'text:ret' %}">トップに戻る</a>
+
+</body>
