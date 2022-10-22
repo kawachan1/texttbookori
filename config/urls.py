@@ -19,6 +19,7 @@ from text import views as text_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('text/',include('text.urls')),
+    # path('text/',include('text.urls')),
+    path('', include('text.urls'))
 
 ]
