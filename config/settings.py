@@ -31,10 +31,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 DEBUG = True
 #DEBUG = 'RENDER' not in os.environ
 
-
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['localhost', '.pythonanywhere.com',
-                 '{|ユーザ名|}.pythonanywhere.com']
+# ALLOWED_HOSTS = ['localhost', '.pythonanywhere.com',
+# '{|ユーザ名|}.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
