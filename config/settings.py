@@ -27,6 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #SECRET_KEY = 'e$zu5+$ab@)p&x81otyxz^plbzn-iu1mw@z5a9pggrh(ggoh&m'
 SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # SECURITY WARNING: don't run with debug turned on in production!
+#
 DEBUG = False
 #DEBUG = True
 #DEBUG = 'RENDER' not in os.environ
@@ -143,7 +144,8 @@ STATIC_URL = '/static/'
 # if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
 # in your application directory on Render.
 #STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_ROOT = os.path.join(BASE_DIR, "texttbookori/static/")
+#STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = BASE_DIR / "static"
 # Turn on WhiteNoise storage backend that takes care of compressing static files
 # and creating unique names for each version so they can safely be cached forever.
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
