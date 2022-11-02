@@ -145,7 +145,15 @@ STATIC_URL = '/static/'
 # in your application directory on Render.
 #STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
 STATIC_ROOT = BASE_DIR / "static"
+
+# Fetch Django's project directory
+#DJANGO_ROOT = dirname(dirname(abspath(__file__)))
+# Fetch the project_root
+#PROJECT_ROOT = dirname(DJANGO_ROOT)
+
+#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 # Turn on WhiteNoise storage backend that takes care of compressing static files
 # and creating unique names for each version so they can safely be cached forever.
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
