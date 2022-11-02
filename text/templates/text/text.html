@@ -13,83 +13,73 @@
   border-bottom: solid 15px transparent;
   border-right: solid 20px rgb(58, 2, 39);
 }
-ol.sample1{
-  counter-reset:list;
-  list-style-type:none;
-  font: 14px/1.6 'arial narrow', sans-serif;
-  padding: 0px;
-  border: solid 1px #F6A38B;
-}
-
-ol.sample1 li{
-  position:relative;
-  line-height: 30px;
-  margin: 7px 0 7px 40px;
-  padding-left: 10px;
-  font-weight: bold;
-  font-size:14px;
-}
-
-ol.sample1 li:before{
-  counter-increment: list;
-  content: counter(list);
-  position: absolute;
-  left: -35px;
-  width: 30px;
-  height: 30px;
-  background: #F6A38B;
+.flat.inverted {
+  position: relative;
   text-align: center;
+  /* 中央揃え */
+  display: block;
+  margin: 0 auto;
+  /* 幅の指定 */
+  width: 100%;
+  max-width: 200px;
+  box-sizing: border-box;
+  padding: 10px;
+  /* 色の指定 */
+  background: linear-gradient(135deg, #ffd900, #ff9300);
   color: #fff;
-  top: 50%;
-  -moz-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s;
 }
+.flat.inverted:hover {
+  background: linear-gradient(-45deg, #ffd900, #ff9300);
+}
+.flat.inverted:active, .flat.inverted:focus {
+  top: 2px;
+}
+
+
 
 </style>
+<meta name="viewport" content="width=320,
+        height=480,
+        initial-scale=1.0,
+        minimum-scale=1.0,
+        maximum-scale=2.0,
+        user-scalable=yes" />
 
 {% if question.votes == 0 %}
 
     <h1>{{question.question_text}}</h1>
-<ol class="sample1">
-  <li>
+
 <form action="{% url 'text:textva' question.id %}" method="post">{% csrf_token %}
 
 
 
-<input type="submit" value="{{question.ans1}}">
+<input type="submit" class="reset flat inverted" value="{{question.ans1}}">
 </form>
-</li>
-<li>
 <form action="{% url 'text:textvb' question.id %}" method="post">{% csrf_token %}
 
 
 
-  <input type="submit" value="{{question.ans2}}">
+  <input type="submit" class="reset flat inverted" value="{{question.ans2}}">
 </form>
-</li>
-</ol>
+
 {% else %}
 
     <h1>{{question.question_text}}</h1>
-<ol class="sample1">
-  <li>
+
 <form action="{% url 'text:textvb' question.id %}" method="post">{% csrf_token %}
 
 
 
-  <input type="submit" value="{{question.ans2}}">
+  <input type="submit" class="reset flat inverted" value="{{question.ans2}}">
 </form>
-</li>
-<li>
+
 <form action="{% url 'text:textva' question.id %}" method="post">{% csrf_token %}
 
 
 
-<input type="submit" value="{{question.ans1}}">
+<input type="submit" class="reset flat inverted" value="{{question.ans1}}">
 </form>
-</li>
-</ol>
 {% endif %}
