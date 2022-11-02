@@ -3,12 +3,23 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>アプリのインストール</title>
 
+    <style>
+        @media(max-width:751px){
+        .sp{
+
+            text-align: center;
+        }
+    }
+
+
+    </style>
 </head>
 
 <body>
-    <h1>アプリをインストールしてみましょう</h1>
+    <h1 class="sp">アプリをインストールしてみましょう</h1>
     <p>①スマホ内のPlayストアのマーク⇩をタップ
     <br>
     <img  src="{% static 'hand.png' %}" alt = "hand" width="100" style="transform: rotate(45deg) ;">
@@ -16,7 +27,7 @@
 
     </p>
     <p>②虫眼鏡をタップして、アプリを検索</p>
-    <div style="position:relative; top: 5px; left: 100px;">
+    <div style="position:relative; top: 5px; left: 100px; width: 240px; right: 0px ;">
     <img src="{% static 'Playstore_serch.png' %}" alt = "Playstore_serch" width="240px">
         <div style="position:absolute; top:-40px; left:-90px; transform:rotate(45deg);">
             <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
@@ -25,7 +36,7 @@
 
     <br>
     <p>③インストールをタップ</p>
-    <div style="position:relative; top: 5px; left: 100px;">
+    <div style="position:relative; top: 5px; left: 100px; width: 24px; right:0px; ">
         <img src="{% static 'Playstore_result.png' %}" alt = "Playstore_serch" width="240px">
             <div style="position:absolute; top:0px; left:50px; transform:rotate(45deg);">
                 <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
@@ -33,6 +44,8 @@
         </div>
 
     <p>インストール完了！</p>
+
+
     <a href="{% url 'text:ret' %}">トップに戻る</a>
 
 </body>

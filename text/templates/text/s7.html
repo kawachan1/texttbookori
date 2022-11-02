@@ -3,11 +3,133 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>amazonの使い方</title>
+
+    <style>
+    @media(max-width:751px){
+        .sp{
+
+            text-align: center;
+        }
+    }
+
+
+    </style>
 
 </head>
 
 <body>
-    <h1>amazonを使ってしてみましょう</h1>
+    <h1 class="sp">amazonを使って買い物してみましょう</h1>
+
+    <p>①Amazonのアイコンをタップ</p>
+    <div style="position:relative; top: 5px; left:80px;width: 240px;right: 0px;">
+    <img src="{% static 'Amazon_logo.png' %}"  width="240px">
+        <div style="position:absolute; top: 80px; left:-90px; transform:rotate(45deg);">
+            <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
+        </div>
+
+    </div>
+
+    <br>
+
+    <p>②開いた画面で「Amazon.co.jpで検索」をタップ</p>
+    <div style="position:relative; top: 5px; left:80px;right: 0px;width: 240px;">
+
+    <img src="{% static 'Amazon_home.png' %}"  width="240px">
+        <div style="position:absolute; top: 10px; left:80px; transform:rotate(315deg);">
+            <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
+        </div>
+
+    </div>
+
+    <br>
+
+    <p>③買いたいものを入力して検索</p>
+    <div style="position:relative; top: 5px; left:80px;width: 240px;right: 0px;">
+
+    <img src="{% static 'Amazon_search.png' %}"  width="240px">
+        <div style="position:absolute; top: 270px; left:100px; transform:rotate(135deg);">
+            <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
+        </div>
+
+    </div>
+
+    <br>
+
+    <p>検索結果の中で欲しい物をタップ</p>
+    <div style="position:relative; top: 5px; left:80px;width: 240px;right: 0px;">
+
+        <img src="{% static 'Amazon_result.png' %}"  width="240px">
+        <div style="position:absolute; top: 350px; left:-60px; transform:rotate(50deg);">
+            <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
+        </div>
+        </div>
+
+    <br>
+
+
+    <p>④欲しかった商品なら下へスクロール</p>
+    <div style="position:relative; top: 5px; left:80px;width: 240px;right: 0px;">
+
+    <img src="{% static 'Amazon_selected1.png' %}"  width="240px">
+
+        <div style="position:absolute; top: 180px; left:-210px; transform:rotate(90deg);">
+            <marquee  width="300" height="200" scrollamount="10" truespeed>
+                <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
+                </marquee>
+        </div>
+
+    </div>
+
+    <br>
+
+    <div style="position:relative; top: 5px; left:80px;width: 240px;right: 0px;">
+        <p>⑤「カートに入れる」をタップ</p>
+    <img src="{% static 'Amazon_selected2.png' %}"  width="240px">
+        <div style="position:absolute; top: 372px; left:137px; transform:rotate(315deg);">
+            <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
+        </div>
+
+    </div>
+
+    <br>
+
+    <p>⑥まだ買い物をする場合は×</p>
+    <p>終わっていたら「レジへ進む」をタップ</p>
+    <div style="position:relative; top: 5px; left:80px;right: 0px;width: 240px;">
+
+    <img src="{% static 'Amazon_insert_cart.png' %}"  width="240px">
+        <div style="position:absolute; top: 250px; left:130px; transform:rotate(315deg);">
+            <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
+        </div>
+
+    </div>
+
+    <br>
+
+    <p>⑦住所や電話番号を確認して、</p>
+    <p>問題なければ「注文を確定する」をタップ</p>
+    <div style="position:relative; top: 5px; left:80px;right: 0px;width: 240px;">
+
+    <img src="{% static 'Amazon_buy.png' %}"  width="240px">
+        <div style="position:absolute; top: 100px; left:130px; transform:rotate(315deg);">
+            <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
+        </div>
+
+    </div>
+
+    <div style="position:relative; top: 5px; left:80px;width: 240px;right: 0px;">
+        <p>購入完了が出れば買い物終了</p>
+
+
+
+    </div>
+
+
+
+
+
+
 <a href="{% url 'text:ret' %}">トップに戻る</a>
 </body>
