@@ -1,6 +1,8 @@
 from importlib.resources import path
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 app_name = 'text'
 urlpatterns = [
     path('', views.index, name="index"),
@@ -18,6 +20,14 @@ urlpatterns = [
 
     path('<int:question_id>/textva', views.textva, name='textva'),
     path('<int:question_id>/textvb', views.textvb, name='textvb'),
-    path('<int:question_id>/ans', views.ans, name='ans')
+    path('<int:question_id>/ans', views.ans, name='ans'),
+
+    path('textcollect2',
+         views.textcollect2, name='textcollect2'),
+    path('<int:question_id>/text2', views.text2, name='text2'),
+
+    path('<int:question_id>/textva2', views.textva2, name='textva2'),
+    path('<int:question_id>/textvb2', views.textvb2, name='textvb2'),
+    path('<int:question_id>/ans2', views.ans2, name='ans2')
 
 ]

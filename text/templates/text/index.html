@@ -79,6 +79,11 @@ a:before{
 
   {% load static %}
   <ul>
+    <li><a href="{% url 'text:s3' %}">スクロール</a></li>
+  <hr>
+
+  <img src="{% static 'scroll.jpg' %}"  alt="サンプル" width="300" height="200">
+  <hr>
 
   <li><a href="{% url 'text:s1' %}">タッチ</a></li>
   <hr>
@@ -90,17 +95,16 @@ a:before{
   <img src="{% static 'kakudai.jpg' %}"  alt="サンプル" width="300" height="200">
 
   <hr>
-  <li><a href="{% url 'text:s3' %}">スクロール</a></li>
-  <hr>
 
-  <img src="{% static 'scroll.jpg' %}"  alt="サンプル" width="300" height="200">
-  <hr>
 
   <li><a href="{% url 'text:textcollect' %}">基本用語</a></li>
   <hr>
   <img src="{% static 'dicitionary.jpg' %}"  alt="サンプル" width="300" height="200">
   <hr>
-
+<li><a href="{% url 'text:textcollect2' %}">ピクトグラム</a></li>
+  <hr>
+  <img src="{% static 'pictogram.jpg' %}"  alt="サンプル" width="300" height="200">
+  <hr>
 
   <li><a href="{% url 'text:s5' %}">アプリのインストール</a></li>
   <hr>

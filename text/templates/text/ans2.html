@@ -1,0 +1,40 @@
+<style>
+
+.oo{position: relative;
+  padding: 0.5em;
+  background: rgb(199, 56, 151);
+  color: white;}
+  .oo:after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 15px transparent;
+  border-right: solid 20px rgb(58, 2, 39);
+}
+    .body {
+        font-size: 75px;
+    }
+</style>
+<meta name="viewport" content="width=320,
+        height=480,
+        initial-scale=1.0,
+        minimum-scale=1.0,
+        maximum-scale=2.0,
+        user-scalable=yes" />
+
+<h1 class="oo">{{ question.question_text }}</h1>
+
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+{{question.is}}
+   {% if question.is_used == True %}<h1 class="body"><font color="red">〇</font></h1>
+{% else %}<h1 class="body">×</h1>
+{% endif %}
+</ul>
+
+
+<a href="{% url 'text:textcollect2' %}">問題に戻る</a>

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Cloth
+from .models import Cloth, Cloth3
 # Create your views here.
 from django.shortcuts import get_object_or_404, render
 from django.http import Http404
@@ -109,3 +109,36 @@ def ans(request, question_id):
 def textcollect(request):
     question = Cloth.objects.order_by()
     return render(request, 'text/textcollect.html', {'question': question})
+
+
+def text2(request, question_id):
+    question = get_object_or_404(Cloth3, pk=question_id)
+    return render(request, 'text/text2.html', {'question': question})
+
+
+def textva2(request, question_id):
+    question = get_object_or_404(Cloth3, pk=question_id)
+
+    question.is_used = True
+    question.save()
+
+    return HttpResponseRedirect(reverse('text:ans2', args=(question.id,)))
+
+
+def textvb2(request, question_id):
+    question = get_object_or_404(Cloth3, pk=question_id)
+
+    question.is_used = False
+    question.save()
+
+    return HttpResponseRedirect(reverse('text:ans2', args=(question.id,)))
+
+
+def ans2(request, question_id):
+    question = get_object_or_404(Cloth3, pk=question_id)
+    return render(request, 'text/ans2.html', {'question': question})
+
+
+def textcollect2(request):
+    question = Cloth3.objects.order_by()
+    return render(request, 'text/textcollect2.html', {'question': question})
