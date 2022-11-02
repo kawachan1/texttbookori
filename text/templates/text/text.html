@@ -13,65 +13,83 @@
   border-bottom: solid 15px transparent;
   border-right: solid 20px rgb(58, 2, 39);
 }
+ol.sample1{
+  counter-reset:list;
+  list-style-type:none;
+  font: 14px/1.6 'arial narrow', sans-serif;
+  padding: 0px;
+  border: solid 1px #F6A38B;
+}
 
-input {
-  padding: 15px 35px;
-  margin: 10px;
-  background: #fff;
-  border-radius: 100vh;
+ol.sample1 li{
+  position:relative;
+  line-height: 30px;
+  margin: 7px 0 7px 40px;
+  padding-left: 10px;
+  font-weight: bold;
+  font-size:14px;
 }
-input:hover {
-  background: #eee;
-}
-input:before {
+
+ol.sample1 li:before{
+  counter-increment: list;
+  content: counter(list);
   position: absolute;
-  top: -5px;
-  left: -5px;
-  width: calc(100% - 6px);
-  height: calc(100% - 6px);
-  content: "";
-  transition: all 0.3s ease;
-  border: 3px solid #333;
-  border-radius: 100vh;
+  left: -35px;
+  width: 30px;
+  height: 30px;
+  background: #F6A38B;
+  text-align: center;
+  color: #fff;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
-input:hover:before {
-  top: 0;
-  left: 0;
-}
+
 </style>
 
 {% if question.votes == 0 %}
 
     <h1>{{question.question_text}}</h1>
-
+<ol class="sample1">
+  <li>
 <form action="{% url 'text:textva' question.id %}" method="post">{% csrf_token %}
 
 
 
 <input type="submit" value="{{question.ans1}}">
 </form>
+</li>
+<li>
 <form action="{% url 'text:textvb' question.id %}" method="post">{% csrf_token %}
 
 
 
   <input type="submit" value="{{question.ans2}}">
 </form>
-
+</li>
+</ol>
 {% else %}
 
     <h1>{{question.question_text}}</h1>
-
+<ol class="sample1">
+  <li>
 <form action="{% url 'text:textvb' question.id %}" method="post">{% csrf_token %}
 
 
 
   <input type="submit" value="{{question.ans2}}">
 </form>
-
+</li>
+<li>
 <form action="{% url 'text:textva' question.id %}" method="post">{% csrf_token %}
 
 
 
 <input type="submit" value="{{question.ans1}}">
 </form>
+</li>
+</ol>
 {% endif %}
