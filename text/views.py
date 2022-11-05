@@ -7,6 +7,8 @@ from django.shortcuts import get_object_or_404, render
 from django.http import Http404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from django.views.generic import TemplateView
+from .application import test
 # Create your views here.
 
 
@@ -142,3 +144,13 @@ def ans2(request, question_id):
 def textcollect2(request):
     question = Cloth3.objects.order_by()
     return render(request, 'text/textcollect2.html', {'question': question})
+
+
+class HomeView(TemplateView):
+    template_name = 'text/home.html'
+
+    def get_context_data(self, **kwargs):  # 追加
+        x = test.sum()
+        context = super().get_context_data(**kwargs)
+        context['sum'] = x
+        return context

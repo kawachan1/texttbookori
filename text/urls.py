@@ -28,6 +28,8 @@ urlpatterns = [
 
     path('<int:question_id>/textva2', views.textva2, name='textva2'),
     path('<int:question_id>/textvb2', views.textvb2, name='textvb2'),
-    path('<int:question_id>/ans2', views.ans2, name='ans2')
+    path('<int:question_id>/ans2', views.ans2, name='ans2'),
+
+    path('test', views.HomeView.as_view(), name='test')
 
 ]
