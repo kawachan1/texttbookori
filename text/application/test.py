@@ -27,7 +27,7 @@ def sum():
     option.add_argument('--headless')
     chrome = webdriver.Chrome(
         executable_path=  # 'BASE_DIR' + 'text//application//
-        'chromedriver.exe', options=option)
+        'text/application/chromedriver.exe', options=option)
     #chrome = webdriver.Chrome(options=option)
     chrome.get("https://sitecreation.co.jp/tenkiyohou/")
     # chrome.find_element_by_class_name("p-postal-code").send_keys("9908570")

@@ -32,4 +32,6 @@ urlpatterns = [
 
     path('test', views.HomeView.as_view(), name='test')
 
+    
+
 ]
