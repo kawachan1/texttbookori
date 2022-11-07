@@ -14,17 +14,20 @@ import os
 import codecs
 import subprocess
 from config.settings import BASE_DIR
+#import chromedriver_binary
+#import chromedriver_binary
 
 
 def sum():
     option = Options()                          # オプションを用意
-# option.add_argument('--headless')
+    # option.add_argument('--headless')
     option.add_experimental_option(
         'excludeSwitches', ['enable-logging'])           # ヘッドレスモードの設定を付与
     option.use_chromium = True
     option.add_argument('--headless')
-    chrome = webdriver.Chrome(
-        executable_path='BASE_DIR' + 'text//application//chromedriver.exe', options=option)
+    # chrome = webdriver.Chrome(
+    # executable_path='BASE_DIR' + 'text//application//chromedriver.exe', options=option)
+    chrome = webdriver.Chrome(options=option)
     chrome.get("https://sitecreation.co.jp/tenkiyohou/")
     # chrome.find_element_by_class_name("p-postal-code").send_keys("9908570")
     # chrome.find_elements(
