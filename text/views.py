@@ -9,6 +9,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic import TemplateView
 from .application import test
+import requests
+import json
+import math
 # Create your views here.
 
 
@@ -144,6 +147,41 @@ def ans2(request, question_id):
 def textcollect2(request):
     question = Cloth3.objects.order_by()
     return render(request, 'text/textcollect2.html', {'question': question})
+
+
+def tenki_show(request):
+    return render(request, 'text/tenki.html')
+
+
+def move_to_gamepage(request):
+    apiKey = "fa5524d5e12279c70853e85627fd0e0e"
+    baseUrl = "http://api.openweathermap.org/data/2.5/weather?"
+
+    # URL作成
+    completeUrl = baseUrl + "appid=" + apiKey + \
+        "&q=" + request.GET.get('player1')
+
+    # レスポンス
+    response = requests.get(completeUrl)
+
+    # レスポンスの内容をJSONフォーマットからPythonフォーマットに変換
+    cityData = response.json()
+    # players = {
+    #    'player1': request.GET.get('player1'),
+    #    'player2': request.GET.get('player2'),
+    #    'player3': request.GET.get('player3'),
+    # }
+    players = {
+        'player1': cityData["name"],
+        'player2': cityData["weather"][0]["description"],
+        'player3': math.floor(cityData["main"]["temp"] - 273.15),
+        'player4': math.floor(cityData["main"]["temp_max"] - 273.15),
+        'player5': math.floor(cityData["main"]["temp_min"] - 273.15),
+        'player6': cityData["main"]["humidity"],
+        'player7': cityData["main"]["pressure"],
+        'player8': cityData["wind"]["speed"]
+    }
+    return render(request, 'text/game_page.html', players)
 
 
 class HomeView(TemplateView):

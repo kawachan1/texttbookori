@@ -29,9 +29,13 @@ urlpatterns = [
     path('<int:question_id>/textva2', views.textva2, name='textva2'),
     path('<int:question_id>/textvb2', views.textvb2, name='textvb2'),
     path('<int:question_id>/ans2', views.ans2, name='ans2'),
+    path('tenki', views.tenki_show, name="tenki_show"),
+    path('move_to_gamepage', views.move_to_gamepage, name="move_to_gamepage"),
+
+
 
     path('test', views.HomeView.as_view(), name='test')
 
-    
+
 
 ]

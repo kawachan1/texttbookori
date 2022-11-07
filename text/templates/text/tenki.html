@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>サンプルアプリ</title>
+</head>
+
+<body>
+    <form action="{% url 'text:move_to_gamepage' %}" method="GET">
+        {% csrf_token %}
+        <a>地名をローマ字先頭大文字で入力してね:</a><input type="text" id="player1" name="player1">
+
+        <input type="image" src="{% static 'tenki.jpg' %}" name="start_button">
+    </form>
+</body>
+</html>
