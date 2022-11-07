@@ -13,6 +13,7 @@ import time
 import os
 import codecs
 import subprocess
+from textbookori.settings import BASE_DIR
 
 
 def sum():
@@ -23,7 +24,7 @@ def sum():
     option.use_chromium = True
     option.add_argument('--headless')
     chrome = webdriver.Chrome(
-        executable_path='text/application/chromedriver.exe', options=option)
+        executable_path='BASE_DIR' + 'text/application/chromedriver.exe', options=option)
     chrome.get("https://sitecreation.co.jp/tenkiyohou/")
     # chrome.find_element_by_class_name("p-postal-code").send_keys("9908570")
     # chrome.find_elements(
