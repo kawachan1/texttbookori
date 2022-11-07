@@ -13,7 +13,7 @@ import time
 import os
 import codecs
 import subprocess
-from textbookori.settings import BASE_DIR
+from config.settings import BASE_DIR
 
 
 def sum():
