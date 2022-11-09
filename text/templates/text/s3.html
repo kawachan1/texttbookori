@@ -35,14 +35,26 @@ function changeImage() {
       img.src = '{% static "batu.jpg" %}';
     }
 
+    function changedisp()
+    {
+      var divmain = document.querySelector("#main");
+      var divexp = document.querySelector("#exp");
+
+      divexp.style.display = "none";
+      divmain.style.display = "block";
+    }
+
   </script>
   <style type="text/css">
-  p {
+  #question {
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
   white-space: nowrap;
 }
 
+  #main{
+    display: none;
+  }
 
 </style>
 <meta name="viewport" content="width=320,
@@ -52,10 +64,19 @@ function changeImage() {
         maximum-scale=2.0,
         user-scalable=yes" />
 </head>
+
+<div id="exp">
+
+  <h1>スクロール</h1>
+  <p>指をスマホに触れた状態で上や下に動かす動作</p>
+  <button onclick="changedisp()">練習へ進む</button>
+</div>
+
+<div id="main">
 <h1>
     これは何の文章かな？スクロールしてみよう
   </h1>
-<p>寿限無(じゅげむ)　寿限無(じゅげむ)　五劫(ごこう)のすりきれ　海砂利(かいじゃり)水魚(すいぎょ)の水行末(すいぎょうまつ) 雲来末(うんらいまつ) 風来末(ふうらいまつ)　食(く)う寝(ね)るところに　住(す)むところ　やぶらこうじの　ぶらこうじ　パイポ　パイポ　パイポの　シューリンガン　シューリンガンの　グーリンダイ　グーリンダイの　ポンポコピーのポンポコナの　長久命(ちょうきゅうめい)の長助(ちょうすけ)
+<p id="question">寿限無(じゅげむ)　寿限無(じゅげむ)　五劫(ごこう)のすりきれ　海砂利(かいじゃり)水魚(すいぎょ)の水行末(すいぎょうまつ) 雲来末(うんらいまつ) 風来末(ふうらいまつ)　食(く)う寝(ね)るところに　住(す)むところ　やぶらこうじの　ぶらこうじ　パイポ　パイポ　パイポの　シューリンガン　シューリンガンの　グーリンダイ　グーリンダイの　ポンポコピーのポンポコナの　長久命(ちょうきゅうめい)の長助(ちょうすけ)
     </p>
 
 
@@ -65,4 +86,6 @@ function changeImage() {
     <input name="q1">
     <input type="button"value="答え合わせ" onclick="kotae1()" >
     </form>
+
+</div>
 <a href="{% url 'text:ret' %}">トップに戻る</a>

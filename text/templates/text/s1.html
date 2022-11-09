@@ -13,7 +13,35 @@
         maximum-scale=2.0,
         user-scalable=yes" />
 </head>
+
+<style>
+    #main{
+        display: none;
+    }
+</style>
+
+<script>
+
+function changedisp()
+    {
+      var divmain = document.querySelector("#main");
+      var divexp = document.querySelector("#exp");
+
+      divexp.style.display = "none";
+      divmain.style.display = "block";
+    }
+
+</script>
 <body>
+    <div id="exp">
+        <h1>タップ</h1>
+        <p>スマートフォンの画面を軽く触ること</p>
+        <img src="{% static 'tap.png' %}">
+
+        <button onclick="changedisp()">練習へ進む</button>
+    </div>
+
+    <div id="main">
     <h1>測定開始を押すとゲームがスタートする</h1>
     <h1>{ゲーム説明}</h1>
         <h1>1~20の数字を順にクリックしてみよう。できるだけ速くクリックすればタイムが短くなるぞ。最速タイムを目指そう</h1>
@@ -68,6 +96,7 @@
 
     </div>
     <script src="{% static 's1.js' %}"></script>
+    </div>
 
 <a href="{% url 'text:ret' %}">トップに戻る</a>
 </body>

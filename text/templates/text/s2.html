@@ -1,4 +1,5 @@
 {% load static %}
+<!DOCTYPE html>
 <head>
 
   <script type="text/javascript">
@@ -42,6 +43,17 @@ function changeImage4() {
       img.src = '{% static "batu.jpg" %}';
     }
 
+    function changedisp()
+    {
+      var divmain = document.querySelector("#main");
+      var divexp = document.querySelector("#exp");
+
+      divexp.style.display = "none";
+      divmain.style.display = "block";
+    }
+
+
+
 </script>
 <meta name="viewport" content="width=320,
         height=480,
@@ -49,7 +61,28 @@ function changeImage4() {
         minimum-scale=1.0,
         maximum-scale=2.0,
         user-scalable=yes" />
+
+<meta charset="UTF-8">
+<title>拡大縮小</title>
+
 </head>
+
+<style>
+  #main{
+    display: none;
+  }
+</style>
+
+<body>
+<div id="exp">
+  <h1>拡大・縮小</h1>
+  <p>二本の指をスマホの画面にあて、ひらくと拡大、閉じると縮小</p>
+  <img src="{% static 'pinch.png' %}">
+  <button onclick="changedisp()">練習へ進む</button>
+</div>
+
+
+<div id="main">
 
 <h1>拡大して何のキャラか当ててみよう</h1>
 
@@ -69,4 +102,7 @@ function changeImage4() {
     <input name="q2">
     <input type="button"value="答え合わせ" onclick="kotae2()" >
     </form>
+
+</div>
 <a href="{% url 'text:ret' %}">トップに戻る</a>
+</body>
