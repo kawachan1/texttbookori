@@ -7,12 +7,10 @@ from django.shortcuts import get_object_or_404, render
 from django.http import Http404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
-from django.views.generic import TemplateView
-from .application import test
+# Create your views here.
+import math
 import requests
 import json
-import math
-# Create your views here.
 
 
 def index(request):
@@ -159,7 +157,7 @@ def move_to_gamepage(request):
 
     # URL作成
     completeUrl = baseUrl + "appid=" + apiKey + \
-        "&q=" + request.GET.get('player1')
+        "&q=" + request.GET.get('player1') + "&lang=ja"
 
     # レスポンス
     response = requests.get(completeUrl)
@@ -182,13 +180,3 @@ def move_to_gamepage(request):
         'player8': cityData["wind"]["speed"]
     }
     return render(request, 'text/game_page.html', players)
-
-
-class HomeView(TemplateView):
-    template_name = 'text/home.html'
-
-    def get_context_data(self, **kwargs):  # 追加
-        x = test.sum()
-        context = super().get_context_data(**kwargs)
-        context['sum'] = x
-        return context
