@@ -40,12 +40,16 @@ tr:nth-child(odd) {
         maximum-scale=2.0,
         user-scalable=yes" />
 </head>
+<link rel="stylesheet" href="{% static 'css/all.css' %}">
 <body>
-  <h1>ピクトグラム問題</h1>
+  <h1 class="title">ピクトグラム問題</h1>
+
   <script> k=0
   function plus(){
     k++;
   }</script>
+
+<div class="border">
 <table border="1">
   {% for q in question %}
 <tr><th><a href="{% url 'text:text2' forloop.counter %}">問題_{{ forloop.counter }}  </a></th></tr>
@@ -78,7 +82,11 @@ plus()
   </script>
   </table>
   <a href="{% url 'text:ret' %}">トップに戻る</a>
+</div>
 </body>
+
+
+
 <!--
 <script type="text/javascript">
 

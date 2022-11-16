@@ -10,9 +10,9 @@ var a = 1;
 <style>
 
 
-    .body {
-        font-size: 75px;
-    }
+.body {
+  font-size: 75px;
+}
 
 table {
  text-align: center;
@@ -39,13 +39,18 @@ tr:nth-child(odd) {
         minimum-scale=1.0,
         maximum-scale=2.0,
         user-scalable=yes" />
+<title>基本用語</title>
 </head>
+<link rel="stylesheet" href="{% static 'css/all.css' %}">
 <body>
-  <h1>基本用語問題</h1>
+  <h1 class="title">基本用語問題</h1>
+
   <script> k=0
   function plus(){
     k++;
   }</script>
+
+<div class="border">
 <table border="1">
   {% for q in question %}
 <tr><th><a href="{% url 'text:text' forloop.counter %}">問題_{{ forloop.counter }}  </a></th></tr>
@@ -71,12 +76,13 @@ plus()
 {% endfor %}
 
 
-  <h1> 正解数<font color="red"><span id="input"></span>/9</h1></font>
+  <h1> 正解数<font color="red"><span id="input"></span>/5</h1></font>
   <script>
       document.getElementById('input').innerHTML = k;
   </script>
   </table>
   <a href="{% url 'text:ret' %}">トップに戻る</a>
+</div>
 </body>
 <!--
 <script type="text/javascript">
