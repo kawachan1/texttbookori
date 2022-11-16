@@ -45,6 +45,7 @@ function changeImage() {
     }
 
   </script>
+  <link rel="stylesheet" href="{% static 'css/all.css' %}">
   <style type="text/css">
   #question {
   -ms-writing-mode: tb-rl;
@@ -52,9 +53,7 @@ function changeImage() {
   white-space: nowrap;
 }
 
-  #main{
-    display: none;
-  }
+
 
 </style>
 <meta name="viewport" content="width=320,
@@ -63,19 +62,29 @@ function changeImage() {
         minimum-scale=1.0,
         maximum-scale=2.0,
         user-scalable=yes" />
+
+<title>スクロール</title>
 </head>
 
 <div id="exp">
 
-  <h1>スクロール</h1>
+  <h1 class="title">スクロール</h1>
+  <hr>
+  <div class="border" style="background-color: #fffaf1;">
   <p>指をスマホに触れた状態で上や下に動かす動作</p>
   <button onclick="changedisp()">練習へ進む</button>
+  <br>
+  <a href="{% url 'text:ret' %}">トップに戻る</a>
+  </div>
 </div>
 
 <div id="main">
-<h1>
+<h1 class="title">
     これは何の文章かな？スクロールしてみよう
-  </h1>
+</h1>
+<hr>
+
+<div class="border" style="background-color: #fffaf1;">
 <p id="question">寿限無(じゅげむ)　寿限無(じゅげむ)　五劫(ごこう)のすりきれ　海砂利(かいじゃり)水魚(すいぎょ)の水行末(すいぎょうまつ) 雲来末(うんらいまつ) 風来末(ふうらいまつ)　食(く)う寝(ね)るところに　住(す)むところ　やぶらこうじの　ぶらこうじ　パイポ　パイポ　パイポの　シューリンガン　シューリンガンの　グーリンダイ　グーリンダイの　ポンポコピーのポンポコナの　長久命(ちょうきゅうめい)の長助(ちょうすけ)
     </p>
 
@@ -86,6 +95,7 @@ function changeImage() {
     <input name="q1">
     <input type="button"value="答え合わせ" onclick="kotae1()" >
     </form>
-
+    <a href="{% url 'text:ret' %}">トップに戻る</a>
 </div>
-<a href="{% url 'text:ret' %}">トップに戻る</a>
+</div>
+

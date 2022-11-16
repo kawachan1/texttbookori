@@ -9,17 +9,20 @@
     <style>
         @media(max-width:751px){
         .sp{
-
+            
             text-align: center;
         }
     }
 
-
+        
     </style>
+<link rel="stylesheet" href="{% static 'css/all.css' %}">
 </head>
 
 <body>
-    <h1 class="sp">アプリをインストールしてみましょう</h1>
+    <h1 class="sp title">アプリをインストールしてみましょう</h1>
+    <hr>
+    <div class="border">
     <p>①スマホ内のPlayストアのマーク⇩をタップ
     <br>
     <img  src="{% static 'hand.png' %}" alt = "hand" width="100" style="transform: rotate(45deg) ;">
@@ -47,5 +50,5 @@
 
 
     <a href="{% url 'text:ret' %}">トップに戻る</a>
-
+    </div>
 </body>

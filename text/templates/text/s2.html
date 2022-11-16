@@ -67,25 +67,28 @@ function changeImage4() {
 
 </head>
 
-<style>
-  #main{
-    display: none;
-  }
-</style>
+
+<link rel="stylesheet" href="{% static 'css/all.css' %}">
 
 <body>
 <div id="exp">
-  <h1>拡大・縮小</h1>
-  <p>二本の指をスマホの画面にあて、ひらくと拡大、閉じると縮小</p>
+  <h1 class="title">拡大・縮小</h1>
+  <div class="border" style="background-color: #fffaf1;">
+  <p id>二本の指をスマホの画面にあて、ひらくと拡大、閉じると縮小</p>
   <img src="{% static 'pinch.png' %}">
+  <br>
   <button onclick="changedisp()">練習へ進む</button>
+  <br>
+  <a  href="{% url 'text:ret' %}">トップに戻る</a>
+  </div>
 </div>
 
 
 <div id="main">
 
-<h1>拡大して何のキャラか当ててみよう</h1>
+<h1 class="title">拡大して何のキャラか当ててみよう</h1>
 
+<div class="border" style="background-color: #fffaf1;">
 <img src="{% static 'sazae.jpg' %}"  alt="サンプル" width="30" height="100">
 <br>
 <img id="image_place" src={% static 'hatena.jpg' %} alt="サンプル" width="300" height="200">
@@ -94,7 +97,7 @@ function changeImage4() {
     <input type="button"value="答え合わせ" onclick="kotae1()" >
     </form>
 <hr>
-<h1>縮小して何のキャラか当ててみよう</h1>
+<h1 class="title">縮小して何のキャラか当ててみよう</h1>
 <img src="{% static 'pikachu.jpg' %}"  alt="サンプル" width="2000" height="2000">
 <br>
 <img id="image_place2" src={% static 'hatena.jpg' %} alt="サンプル" width="300" height="200">
@@ -102,7 +105,8 @@ function changeImage4() {
     <input name="q2">
     <input type="button"value="答え合わせ" onclick="kotae2()" >
     </form>
-
+    <a  href="{% url 'text:ret' %}">トップに戻る</a>
 </div>
-<a href="{% url 'text:ret' %}">トップに戻る</a>
+</div>
+
 </body>

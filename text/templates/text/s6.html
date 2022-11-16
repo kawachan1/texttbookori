@@ -9,40 +9,43 @@
     <style>
         @media(max-width:751px){
         .sp{
-
+            
             text-align: center;
         }
     }
 
-
+        
     </style>
 
+<link rel="stylesheet" href="{% static 'css/all.css' %}">
 </head>
 
 <body>
-    <h1 class="sp">LINEでお話してみましょう</h1>
+    <h1 class="sp title">LINEでお話してみましょう</h1>
 
+    <hr>
+    <div class="border">
     <p>①LINEのアイコンをタップ</p>
         <div style="position:relative; top: 5px; left:80px; width: 240px; right: 0px;">
-
+            
         <img src="{% static 'LINE.png' %}"  width="240px">
             <div style="position:absolute; top: 40px; left:-90px; transform:rotate(45deg);">
                 <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
             </div>
-
+            
         </div>
 
         <br>
 
         <p>②友だちをタップ</p>
         <div style="position:relative; top: 5px; left:80px;width: 240px; right: 0px;">
-
-
+        
+            
         <img src="{% static 'LINE_HOME.png' %}"  width="240px">
             <div style="position:absolute; top: 100px; left:-130px; transform:rotate(45deg);">
                 <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
             </div>
-
+            
         </div>
 
         <br>
@@ -51,28 +54,28 @@
         <p>③お話したい友達をタップ</p>
         <p>今回はMasaruさん</p>
         <div style="position:relative; top: 5px; left:80px; width: 240px; right: 0px;">
-
+ 
         <img src="{% static 'LINE_FRIENDS.png' %}"  width="240px">
             <div style="position:absolute; top: 60px; left:-120px; transform:rotate(45deg);">
                 <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
             </div>
-
+            
         </div>
 
         <br>
 
         <p>④トークをタップ</p>
-        <div style="position:relative; top: 5px; left:80px; right: 0px; width: 240px;">
+        <div style="position:relative; top: 5px; left:80px; right: 0px; width: 240px;">            
         <img src="{% static 'LINE_PROFILE.png' %}"  width="240px">
             <div style="position:absolute; top: 385px; left:-118px; transform:rotate(45deg);">
                 <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
             </div>
-
+            
         </div>
 
         <br>
 
-
+        
         <p>⑤下の枠をタップ</p>
         <div style="position:relative; top: 5px; left:80px;right: 0px;width: 240px;">
 
@@ -80,7 +83,7 @@
             <div style="position:absolute; top: 290px; left:-30px; transform:rotate(135deg);">
                 <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
             </div>
-
+            
         </div>
 
         <br>
@@ -90,14 +93,14 @@
         <div style="position:relative; top: 5px; left:80px;right: 0px;width: 240px;">
         <img src="{% static 'LINE_POST_CHAT.png' %}"  width="240px">
 
-
+            
         </div>
 
         <br>
 
         <p>送信完了</p>
         <div style="position:relative; top: 5px; left:80px;width: 240px;right: 0px;">
-
+        
         <img src="{% static 'LINE_POSTED_CHAT.png' %}"  width="240px">
         </div>
 
@@ -105,7 +108,8 @@
 
         <br>
 
-
+        
 
 <a href="{% url 'text:ret' %}">トップに戻る</a>
+</div>
 </body>

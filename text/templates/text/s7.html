@@ -9,57 +9,59 @@
     <style>
     @media(max-width:751px){
         .sp{
-
+            
             text-align: center;
         }
     }
 
-
+        
     </style>
-
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
 </head>
 
 <body>
-    <h1 class="sp">amazonを使って買い物してみましょう</h1>
+    <h1 class="sp title">amazonを使って買い物してみましょう</h1>
+    <hr>
 
+    <div class="border">
     <p>①Amazonのアイコンをタップ</p>
     <div style="position:relative; top: 5px; left:80px;width: 240px;right: 0px;">
     <img src="{% static 'Amazon_logo.png' %}"  width="240px">
         <div style="position:absolute; top: 80px; left:-90px; transform:rotate(45deg);">
             <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
         </div>
-
+        
     </div>
 
     <br>
-
+    
     <p>②開いた画面で「Amazon.co.jpで検索」をタップ</p>
     <div style="position:relative; top: 5px; left:80px;right: 0px;width: 240px;">
-
+        
     <img src="{% static 'Amazon_home.png' %}"  width="240px">
         <div style="position:absolute; top: 10px; left:80px; transform:rotate(315deg);">
             <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
         </div>
-
+        
     </div>
 
     <br>
 
     <p>③買いたいものを入力して検索</p>
     <div style="position:relative; top: 5px; left:80px;width: 240px;right: 0px;">
-
+       
     <img src="{% static 'Amazon_search.png' %}"  width="240px">
         <div style="position:absolute; top: 270px; left:100px; transform:rotate(135deg);">
             <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
         </div>
-
+        
     </div>
 
     <br>
 
     <p>検索結果の中で欲しい物をタップ</p>
     <div style="position:relative; top: 5px; left:80px;width: 240px;right: 0px;">
-
+       
         <img src="{% static 'Amazon_result.png' %}"  width="240px">
         <div style="position:absolute; top: 350px; left:-60px; transform:rotate(50deg);">
             <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
@@ -71,15 +73,15 @@
 
     <p>④欲しかった商品なら下へスクロール</p>
     <div style="position:relative; top: 5px; left:80px;width: 240px;right: 0px;">
-
+        
     <img src="{% static 'Amazon_selected1.png' %}"  width="240px">
-
+        
         <div style="position:absolute; top: 180px; left:-210px; transform:rotate(90deg);">
             <marquee  width="300" height="200" scrollamount="10" truespeed>
                 <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
                 </marquee>
         </div>
-
+        
     </div>
 
     <br>
@@ -90,7 +92,7 @@
         <div style="position:absolute; top: 372px; left:137px; transform:rotate(315deg);">
             <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
         </div>
-
+        
     </div>
 
     <br>
@@ -103,7 +105,7 @@
         <div style="position:absolute; top: 250px; left:130px; transform:rotate(315deg);">
             <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
         </div>
-
+        
     </div>
 
     <br>
@@ -116,14 +118,14 @@
         <div style="position:absolute; top: 100px; left:130px; transform:rotate(315deg);">
             <img  src="{% static 'hand.png' %}" alt = "hand" width="150px">
         </div>
-
+        
     </div>
 
     <div style="position:relative; top: 5px; left:80px;width: 240px;right: 0px;">
         <p>購入完了が出れば買い物終了</p>
 
 
-
+        
     </div>
 
 
@@ -132,4 +134,5 @@
 
 
 <a href="{% url 'text:ret' %}">トップに戻る</a>
+</div>
 </body>
