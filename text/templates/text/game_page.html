@@ -1,15 +1,16 @@
-<html>
+{% load static %}
+<!DOCTYPE html>
+
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
     <title>遷移先</title>
-    <style type="text/css">
-    body {
-  background: #fffaf1;
-}
-</style>
-
 </head>
 <body>
+    <h1 class="title">天気情報</h1>
+    <hr>
+    <div class="border">
     <table>
       <h1>都市名 {{ player1 }}</h1>
 
@@ -18,24 +19,25 @@
         <h1>天気　{{ player2 }}</h1>
         <br>
         <br>
-        <h1>現在の気温　{{ player3 }}</h1>
+        <h1>現在の気温　{{ player3 }}℃</h1>
         <br>
         <br>
-        <h1>最高気温　{{ player4 }}</h1>
+        <h1>最高気温　{{ player4 }}℃</h1>
         <br>
         <br>
-        <h1>最低気温　{{ player5 }}</h1>
+        <h1>最低気温　{{ player5 }}℃</h1>
         <br>
         <br>
-        <h1>湿度　{{ player6 }}</h1>
+        <h1>湿度　{{ player6 }}%</h1>
         <br>
         <br>
-        <h1>気圧　{{ player7 }}</h1>
+        <h1>気圧　{{ player7 }}hPa</h1>
         <br>
         <br>
-        <h1>風速　{{ player8 }}</h1>
+        <h1>風速　{{ player8 }}m/s</h1>
 
     </table>
     <a href="{% url 'text:ret' %}">トップに戻る</a>
+    </div>
 </body>
-</html>
+
