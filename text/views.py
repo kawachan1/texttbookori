@@ -169,14 +169,18 @@ def move_to_gamepage(request):
     #    'player2': request.GET.get('player2'),
     #    'player3': request.GET.get('player3'),
     # }
-    players = {
-        'player1': cityData["name"],
-        'player2': cityData["weather"][0]["description"],
-        'player3': math.floor(cityData["main"]["temp"] - 273.15),
-        'player4': math.floor(cityData["main"]["temp_max"] - 273.15),
-        'player5': math.floor(cityData["main"]["temp_min"] - 273.15),
-        'player6': cityData["main"]["humidity"],
-        'player7': cityData["main"]["pressure"],
-        'player8': cityData["wind"]["speed"]
-    }
-    return render(request, 'text/game_page.html', players)
+    try:
+        players = {
+            'player1': cityData["name"],
+            'player2': cityData["weather"][0]["description"],
+            'player3': math.floor(cityData["main"]["temp"] - 273.15),
+            'player4': math.floor(cityData["main"]["temp_max"] - 273.15),
+            'player5': math.floor(cityData["main"]["temp_min"] - 273.15),
+            'player6': cityData["main"]["humidity"],
+            'player7': cityData["main"]["pressure"],
+            'player8': cityData["wind"]["speed"]
+        }
+        return render(request, 'text/game_page.html', players)
+    
+    except:
+        return render(request,'text/index.html')
