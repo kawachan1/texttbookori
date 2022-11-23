@@ -13,16 +13,16 @@
     <h1 class="title">天気情報</h1>
     <hr>
     <div class="border">
+    {{ message | linebreaksbr }}
     <form action="{% url 'text:move_to_gamepage' %}" method="GET">
         {% csrf_token %}
-        <a>地名をローマ字先頭大文字で入力してね:</a><input type="text" id="player1" name="player1">
-
+        <input type="text" id="player1" name="player1">
         <input type="image" src="{% static 'click.jpg' %}" name="start_button" width="50" height="50">
     </form>
 
     <a href="{% url 'text:ret' %}">トップに戻る</a>
     </div>
 
-    
+
 </body>
 </html>

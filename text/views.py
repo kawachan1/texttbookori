@@ -148,7 +148,11 @@ def textcollect2(request):
 
 
 def tenki_show(request):
-    return render(request, 'text/tenki.html')
+    message = "ローマ字で県名を入力してください\n例) tokyo"
+    context = {
+        'message': message
+    }
+    return render(request, 'text/tenki.html', context)
 
 
 def move_to_gamepage(request):
@@ -169,6 +173,7 @@ def move_to_gamepage(request):
     #    'player2': request.GET.get('player2'),
     #    'player3': request.GET.get('player3'),
     # }
+
     try:
         players = {
             'player1': cityData["name"],
@@ -181,6 +186,10 @@ def move_to_gamepage(request):
             'player8': cityData["wind"]["speed"]
         }
         return render(request, 'text/game_page.html', players)
-    
+
     except:
-        return render(request,'text/index.html')
+        message = "天気のデータが取得できませんでした。\n正しい値を入力してください"
+        context = {
+            'message': message
+        }
+        return render(request, 'text/tenki.html', context)
