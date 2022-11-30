@@ -197,7 +197,7 @@ def move_to_gamepage(request):
 
 
 def divi(request):
-    message = "漢字で星座を入力してください\n例) tokyo"
+    message = "漢字で星座を入力してください\n例) 蠍座"
     context = {
         'message': message
     }
