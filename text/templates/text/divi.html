@@ -1,0 +1,18 @@
+{% load static %}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>占い情報</title>
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+</head>
+
+<h1 class="title">占い情報</h1>
+    <hr>
+    <div class="border">
+<form action="{% url 'text:move_to_div' %}" method="GET">
+  {{ message | linebreaksbr }}
+        {% csrf_token %}
+        <input type="text" id="player1" name="player1">
+        <input type="image" src="{% static 'click.jpg' %}" name="start_button" width="50" height="50">
+    </form>
+    </div>

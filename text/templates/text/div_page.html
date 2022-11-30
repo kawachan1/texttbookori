@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <title>遷移先</title>
+</head>
+<body>
+    <h1 class="title">天気情報</h1>
+    <hr>
+    <div class="border">
+    <table>
+      <h1>まとめ {{ player1 }}</h1>
+
+        <br>
+        <br>
+        <h1>ラッキーアイテム　{{ player2 }}</h1>
+        <br>
+        <br>
+        <h1>金運　{{ player3 }}</h1>
+        <br>
+        <br>
+        <h1>総合運　{{ player4 }}</h1>
+        <br>
+        <br>
+        <h1>仕事運　{{ player5 }}</h1>
+        <br>
+        <br>
+        <h1>ラッキーカラー　{{ player6 }}</h1>
+        <br>
+        <br>
+        <h1>恋愛運　{{ player8 }}</h1>
+        <br>
+        <br>
+        <h1>ランク　{{ player9 }}</h1>
+
+    </table>
+    <a href="{% url 'text:ret' %}">トップに戻る</a>
+    </div>
+</body>

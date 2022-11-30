@@ -31,6 +31,8 @@ urlpatterns = [
     path('<int:question_id>/ans2', views.ans2, name='ans2'),
     path('tenki', views.tenki_show, name="tenki_show"),
     path('move_to_gamepage', views.move_to_gamepage, name="move_to_gamepage"),
+    path('divi', views.divi, name='divi'),
+    path('move_to_div', views.move_to_div, name='move_to_div'),
 
 
 

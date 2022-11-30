@@ -1,3 +1,4 @@
+import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -193,3 +194,64 @@ def move_to_gamepage(request):
             'message': message
         }
         return render(request, 'text/tenki.html', context)
+
+
+def divi(request):
+    message = "漢字で星座を入力してください\n例) tokyo"
+    context = {
+        'message': message
+    }
+    return render(request, 'text/divi.html', context)
+
+
+def move_to_div(request):
+
+    date = datetime.datetime.today().strftime("%Y/%m/%d")
+
+    # http://api.jugemkey.jp/api/horoscope/year/month/day の形式
+    res = requests.get(url='http://api.jugemkey.jp/api/horoscope/free/' + date)
+    idea = request.GET.get('player1')
+
+    #apiKey = "fa5524d5e12279c70853e85627fd0e0e"
+    #baseUrl = "http://api.openweathermap.org/data/2.5/weather?"
+
+    # URL作成
+    # completeUrl = baseUrl + "appid=" + apiKey + \
+    #   "&q=" + request.GET.get('player1') + "&lang=ja"
+
+    # レスポンス
+    #response = requests.get(completeUrl)
+
+    # レスポンスの内容をJSONフォーマットからPythonフォーマットに変換
+    #cityData = response.json()
+    # players = {
+    #    'player1': request.GET.get('player1'),
+    #    'player2': request.GET.get('player2'),
+    #    'player3': request.GET.get('player3'),
+    # }
+    for i in range(12):
+        if(idea == res.json()["horoscope"][date][i]['sign']):
+            count = i
+            break
+
+    try:
+        players = {
+            'player1': res.json()["horoscope"][date][count]["content"],
+            'player2': res.json()["horoscope"][date][count]["item"],
+            'player3': res.json()["horoscope"][date][count]["money"],
+            'player4': res.json()["horoscope"][date][count]["total"],
+            'player5': res.json()["horoscope"][date][count]["job"],
+            'player6': res.json()["horoscope"][date][count]["color"],
+            'player7': res.json()["horoscope"][date][count]["day"],
+            'player8': res.json()["horoscope"][date][count]["love"],
+            'player9': res.json()["horoscope"][date][count]["rank"],
+            'player10': res.json()["horoscope"][date][count]["sign"],
+        }
+        return render(request, 'text/div_page.html', players)
+
+    except:
+        message = "占いのデータが取得できませんでした。\n正しい値を入力してください"
+        context = {
+            'message': message
+        }
+        return render(request, 'text/divi.html', context)
