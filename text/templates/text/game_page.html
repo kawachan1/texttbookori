@@ -17,6 +17,17 @@
         <br>
         <br>
         <h1>天気　{{ player2 }}</h1>
+            {% if '晴' in player2 %}
+                <img src = "{% static 'Sunny.png' %}">
+            {% elif '曇' in player2 or '雲' in player2 %}
+                <img src ="{% static 'Cloudy.png' %}">
+            {% elif '雨' in player2 %}
+                <img src="{% static 'Rainy.png' %}">
+            {% elif '雪' in player2 %}
+                <img src="{% static 'Snowy.png' %}">
+
+            {% endif %}
+
         <br>
         <br>
         <h1>現在の気温　{{ player3 }}℃</h1>
@@ -37,6 +48,8 @@
         <h1>風速　{{ player8 }}m/s</h1>
 
     </table>
+    <a href="{% url 'text:tenki_show' %}">再検索</a>
+    <br>
     <a href="{% url 'text:ret' %}">トップに戻る</a>
     </div>
 </body>
