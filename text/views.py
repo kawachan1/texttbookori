@@ -149,7 +149,7 @@ def textcollect2(request):
 
 
 def tenki_show(request):
-    message = "ローマ字で県名を入力してください\n例) tokyo"
+    message = "県名を入力してください\n例) 東京"
     context = {
         'message': message
     }
@@ -189,7 +189,7 @@ def move_to_gamepage(request):
         return render(request, 'text/game_page.html', players)
 
     except:
-        message = "天気のデータが取得できませんでした。\n正しい値を入力してください。\nローマ字で県名を入力してください\n例) tokyo"
+        message = "天気のデータが取得できませんでした。\n正しい値を入力してください。\n県名を入力してください\n例) 東京"
         context = {
             'message': message
         }
