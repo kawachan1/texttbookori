@@ -2,13 +2,14 @@
 <head>
   <script type="text/javascript">
     let once = false;
+    let disp = 0;
 	window.addEventListener('scroll', function () {
 
 		// ターゲットの画面トップからの距離
 		taeget_position = document.querySelector('#target').getBoundingClientRect().top;
 
 		// 画面トップからの距離から画面の高さより小さければ実行する
-			if (taeget_position <= window.innerHeight && once !== true) {
+			if (taeget_position <= window.innerHeight && once !== true && disp == 1) {
 				once = true;
 				alert(`よくできました`);
 			}
@@ -40,6 +41,8 @@ function changeImage() {
       var divmain = document.querySelector("#main");
       var divexp = document.querySelector("#exp");
 
+      disp = 1;
+
       divexp.style.display = "none";
       divmain.style.display = "block";
     }
@@ -70,7 +73,7 @@ function changeImage() {
 
   <h1 class="title">スクロール</h1>
   <hr>
-  <div class="border" style="background-color: #fffaf1;">
+  <div class="border">
   <p>指をスマホに触れた状態で上や下に動かす動作</p>
   <button onclick="changedisp()">練習へ進む</button>
   <br>
@@ -84,7 +87,7 @@ function changeImage() {
 </h1>
 <hr>
 
-<div class="border" style="background-color: #fffaf1;">
+<div class="border">
 <p id="question">寿限無(じゅげむ)　寿限無(じゅげむ)　五劫(ごこう)のすりきれ　海砂利(かいじゃり)水魚(すいぎょ)の水行末(すいぎょうまつ) 雲来末(うんらいまつ) 風来末(ふうらいまつ)　食(く)う寝(ね)るところに　住(す)むところ　やぶらこうじの　ぶらこうじ　パイポ　パイポ　パイポの　シューリンガン　シューリンガンの　グーリンダイ　グーリンダイの　ポンポコピーのポンポコナの　長久命(ちょうきゅうめい)の長助(ちょうすけ)
     </p>
 
