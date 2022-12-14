@@ -58,8 +58,8 @@ function changeImage4() {
 <meta name="viewport" content="width=320,
         height=480,
         initial-scale=1.0,
-        minimum-scale=1.0,
-        maximum-scale=2.0,
+        minimum-scale=0.1,
+        maximum-scale=3.0,
         user-scalable=yes" />
 
 <meta charset="UTF-8">
@@ -73,7 +73,8 @@ function changeImage4() {
 <body>
 <div id="exp">
   <h1 class="title">拡大・縮小</h1>
-  <div class="border" style="background-color: #fffaf1;">
+  <hr>
+  <div class="border">
   <p id>二本の指をスマホの画面にあて、ひらくと拡大、閉じると縮小</p>
   <img src="{% static 'pinch.png' %}">
   <br>
@@ -88,7 +89,7 @@ function changeImage4() {
 
 <h1 class="title">拡大して何のキャラか当ててみよう</h1>
 
-<div class="border" style="background-color: #fffaf1;">
+<div class="border">
 <img src="{% static 'sazae.jpg' %}"  alt="サンプル" width="30" height="100">
 <br>
 <img id="image_place" src={% static 'hatena.jpg' %} alt="サンプル" width="300" height="200">
